@@ -648,3 +648,344 @@ html[dir="rtl"] .footer-links { direction: rtl; }
   html[dir="rtl"] .field input:placeholder-shown { padding-left: 112px; padding-right: 15px; }
   html[dir="rtl"] .input-example { left: 7px; right: auto; }
 }
+
+
+/* --------------------------------------------------------------------------
+   Final mobile-first responsive pass
+   -------------------------------------------------------------------------- */
+html, body, #root, .app-shell { width: 100%; max-width: 100%; }
+body { min-width: 0; overflow-x: clip; }
+.wrap { min-width: 0; }
+.hero-grid > *,
+.intro-band > *,
+.builder-shell > *,
+.after-card > *,
+.trust-card > *,
+.footer-main > *,
+.page,
+.prose,
+.field,
+.preview-panel,
+.builder-fields { min-width: 0; }
+
+.hero-copy h1,
+.intro-band h2,
+.builder-topline h2,
+.builder-heading-row h3,
+.preview-panel-top h3,
+.process-heading h2,
+.flow-card h3,
+.after-main h2,
+.trust-card h3,
+.page > h1 {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.hero-lede,
+.intro-copy p,
+.builder-topline p,
+.process-heading > p,
+.flow-card p,
+.after-main p,
+.trust-card p,
+.final-note p,
+.prose p,
+.faq p,
+.field-footer,
+.field-error,
+.preview-callout span,
+.preview-privacy span,
+.builder-footnote span { overflow-wrap: anywhere; }
+
+.field input,
+.field select,
+.example-button,
+.primary-action,
+.secondary-action,
+.text-action,
+.hero-primary,
+.share-toggle,
+.done-button { max-width: 100%; }
+
+@media (max-width: 900px) {
+  .wrap { width: min(100% - 24px, 1180px); }
+  .header-inner { width: min(100% - 24px, 1180px); }
+  .hero-grid,
+  .builder-shell,
+  .after-card,
+  .trust-card,
+  .flow-grid { width: 100%; }
+
+  .hero-grid { grid-template-columns: minmax(0, 1fr); }
+  .hero-copy h1 { font-size: clamp(42px, 10vw, 72px); line-height: 1.08; letter-spacing: 0; }
+  .hero-lede { max-width: 100%; }
+  .hero-visual { width: 100%; min-width: 0; overflow: hidden; }
+  .sms-receipt { width: min(100%, 370px); max-width: calc(100% - 10px); }
+
+  .builder-shell { grid-template-columns: minmax(0, 1fr); }
+  .builder-fields,
+  .preview-panel { width: 100%; }
+  .preview-panel { min-width: 0; }
+  .preview-panel-top { min-width: 0; }
+  .preview-panel-top > div { min-width: 0; }
+  .preview-panel-top h3 { overflow-wrap: anywhere; }
+}
+
+@media (max-width: 720px) {
+  .wrap,
+  .header-inner { width: min(100% - 20px, 1180px); }
+  .site-header { min-width: 0; }
+  .header-inner { gap: 10px; }
+  .brand { min-width: 0; max-width: calc(100% - 52px); }
+  .brand-text { min-width: 0; }
+  .brand-text strong { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+  .hero-grid { padding: 40px 0 46px; gap: 22px; }
+  .hero-kicker { max-width: 100%; flex-wrap: wrap; line-height: 1.55; }
+  .hero-copy h1 { font-size: clamp(36px, 11vw, 56px); line-height: 1.12; }
+  .hero-lede { font-size: 14px; line-height: 1.9; }
+  .hero-actions { width: 100%; }
+  .hero-primary { width: fit-content; max-width: 100%; }
+  .hero-note { max-width: 100%; align-items: flex-start; line-height: 1.7; }
+  .hero-rail { width: 100%; flex-wrap: wrap; justify-content: space-between; row-gap: 10px; }
+  .hero-rail > div { min-width: 0; }
+  .hero-visual { min-height: 330px; }
+  .hero-number { font-size: clamp(74px, 22vw, 120px); }
+  .sms-receipt { transform: rotate(1.2deg); }
+
+  .intro-band { padding-top: 44px; }
+  .intro-band h2 { font-size: clamp(29px, 8.5vw, 40px); line-height: 1.18; }
+
+  .builder-fields, .preview-panel { padding: 20px 16px; }
+  .builder-heading-row { gap: 12px; }
+  .builder-heading-row h3, .preview-panel-top h3 { font-size: clamp(20px, 6vw, 25px); line-height: 1.25; }
+  .browser-only { max-width: 100%; white-space: normal; }
+  .field-head { gap: 8px; }
+  .field-head label { font-size: 11px; line-height: 1.6; }
+  .field-head > div:first-child { min-width: 0; }
+  .field-status { flex: 0 0 auto; }
+  .field input, .field select { height: 52px; font-size: 16px; min-width: 0; }
+
+  /* Example actions move below the input on phones so they never cover the placeholder. */
+  .input-example,
+  html[dir="rtl"] .input-example {
+    position: static;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: none;
+    margin-top: 8px;
+    transform: none;
+  }
+  .input-example .example-button { min-height: 36px; padding: 0 10px; font-size: 9px; }
+  .field input:placeholder-shown,
+  html[dir="rtl"] .field input:placeholder-shown,
+  html[dir="rtl"] .field input:not(:placeholder-shown) { padding-right: 15px; padding-left: 48px; }
+  .field input:placeholder-shown { padding-right: 15px; }
+  .field-footer { min-height: 24px; }
+
+  .builder-actions { width: 100%; grid-template-columns: 1fr; }
+  .primary-action, .secondary-action, .text-action { width: 100%; min-height: 50px; }
+
+  .sms-sheet { width: 100%; }
+  .sms-sheet-body { min-height: 205px; }
+  .sms-complete code { font-size: 10.5px; line-height: 1.8; }
+  .preview-callout { width: 100%; }
+  .preview-privacy { align-items: flex-start; }
+
+  .process-heading h2 { font-size: clamp(30px, 8.5vw, 42px); line-height: 1.2; }
+  .flow-card { min-height: auto; padding: 22px 18px 26px; }
+  .flow-card h3 { margin-top: 34px; font-size: clamp(24px, 7vw, 30px); line-height: 1.2; }
+  .flow-card p { max-width: 100%; }
+  .after-main { padding: 24px 20px; }
+  .after-main h2 { font-size: clamp(28px, 8vw, 36px); line-height: 1.2; }
+  .after-send { padding: 24px 20px; }
+  .trust-card { align-items: start; }
+  .trust-card h3 { line-height: 1.5; }
+  .trust-card button { grid-column: 1 / -1; justify-self: stretch; width: 100%; min-height: 44px; justify-content: center; border-top: 1px solid #e2e8e2; padding-top: 13px; }
+  .final-note > span { display: inline-block; }
+
+  .footer-links { flex-wrap: wrap; row-gap: 8px; }
+  .footer-privacy { width: 100%; }
+}
+
+@media (max-width: 420px) {
+  .wrap,
+  .header-inner { width: min(100% - 16px, 1180px); }
+  .hero-grid { padding-top: 34px; }
+  .hero-copy h1 { font-size: clamp(32px, 10.2vw, 46px); line-height: 1.12; }
+  .hero-lede { font-size: 13.5px; }
+  .hero-actions { margin-top: 20px; }
+  .hero-primary { width: 100%; justify-content: center; }
+  .hero-note { font-size: 8.5px; }
+  .hero-rail { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+  .hero-rail > svg { display: none; }
+  .hero-rail > div { flex-direction: column; gap: 4px; }
+  .hero-rail span { font-size: 8px; line-height: 1.4; }
+  .hero-visual { min-height: 285px; }
+  .hero-number { font-size: clamp(64px, 22vw, 92px); top: 2px; }
+  .sms-receipt { width: min(100%, 320px); padding: 15px; }
+  .receipt-copy { padding: 14px 12px; font-size: 10px; }
+  .receipt-foot { margin-top: 14px; padding-top: 11px; }
+
+  .intro-band { gap: 12px; padding: 38px 0 30px; }
+  .intro-stat strong { font-size: 40px; }
+  .intro-stat span { font-size: 8.5px; }
+
+  .builder-topline { margin-bottom: 15px; }
+  .builder-topline h2 { font-size: clamp(28px, 8vw, 36px); line-height: 1.25; }
+  .builder-topline p { font-size: 9.5px; line-height: 1.75; }
+  .progress-meta { font-size: 8.5px; }
+  .builder-fields, .preview-panel { padding-inline: 13px; }
+  .builder-heading-row { padding-bottom: 15px; }
+  .section-chip { font-size: 8px; }
+  .field { margin-top: 18px; }
+  .field input, .field select { height: 50px; padding-inline: 13px; }
+  .field input:not(:placeholder-shown),
+  html[dir="rtl"] .field input:not(:placeholder-shown) { padding-left: 43px; padding-right: 13px; }
+  .input-valid { width: 25px; height: 25px; left: 10px; right: auto; }
+  .select-wrap > svg { left: 12px; right: auto; }
+  .select-wrap select { padding-left: 39px; padding-right: 13px; }
+  .input-example { margin-top: 7px; }
+  .input-example .example-button { min-height: 34px; }
+
+  .preview-state { display: inline-flex; }
+  .sms-sheet-head { padding: 13px; }
+  .sms-sheet-body { min-height: 175px; padding: 14px; }
+  .sms-sheet-footer { padding: 10px 12px; }
+  .preview-callout { padding: 11px; }
+  .preview-privacy { font-size: 8px; }
+
+  .process-band { padding: 52px 0; }
+  .after-section { padding-top: 42px; }
+  .trust-section { padding: 38px 0 42px; }
+  .footer-main { padding-top: 24px; }
+
+  .image-modal-backdrop, .success-backdrop { padding: 8px; }
+  .image-modal, .success-modal { width: 100%; max-width: none; }
+  .success-modal { padding: 20px 13px; }
+  .share-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 340px) {
+  .wrap,
+  .header-inner { width: calc(100% - 14px); }
+  .brand-mark { width: 34px; height: 34px; }
+  .mobile-menu-trigger { width: 36px; height: 36px; }
+  .hero-copy h1 { font-size: 29px; }
+  .hero-lede { font-size: 12.5px; }
+  .sms-receipt { width: 100%; }
+  .builder-fields, .preview-panel { padding-inline: 11px; }
+  .field-head label { font-size: 10.5px; }
+  .field-head > div:first-child span, .field-status, .field-footer { font-size: 8px; }
+}
+
+/* --------------------------------------------------------------------------
+   Mobile example buttons — keep them inside the input row
+   -------------------------------------------------------------------------- */
+@media (max-width: 720px) {
+  .input-wrap { position: relative; }
+
+  .input-example {
+    position: absolute;
+    top: 50%;
+    right: 7px;
+    left: auto;
+    width: auto;
+    max-width: calc(100% - 14px);
+    margin: 0;
+    transform: translateY(-50%);
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+  }
+
+  .input-example .example-button {
+    pointer-events: auto;
+    min-height: 34px;
+    padding: 0 8px;
+    font-size: 8.8px;
+    white-space: nowrap;
+  }
+
+  .field input:placeholder-shown {
+    padding-right: 112px;
+    padding-left: 13px;
+  }
+
+  html[dir="rtl"] .input-example {
+    right: auto;
+    left: 7px;
+  }
+
+  html[dir="rtl"] .field input:placeholder-shown {
+    padding-right: 13px;
+    padding-left: 112px;
+  }
+
+  /* These values-fields use LTR text even inside the Urdu RTL interface. */
+  html[dir="rtl"] .field input#cnic,
+  html[dir="rtl"] .field input#vehicle,
+  html[dir="rtl"] .field input#date {
+    direction: ltr;
+    text-align: left;
+  }
+}
+
+@media (max-width: 420px) {
+  .input-example {
+    right: 6px;
+    max-width: calc(100% - 12px);
+    margin-top: 0;
+  }
+
+  .input-example .example-button {
+    min-height: 32px;
+    padding-inline: 7px;
+    font-size: 8.4px;
+  }
+
+  .field input:placeholder-shown {
+    padding-right: 106px;
+  }
+
+  html[dir="rtl"] .input-example {
+    right: auto;
+    left: 6px;
+  }
+
+  html[dir="rtl"] .field input:placeholder-shown {
+    padding-right: 13px;
+    padding-left: 106px;
+  }
+}
+
+@media (max-width: 340px) {
+  .input-example {
+    right: 5px;
+  }
+
+  html[dir="rtl"] .input-example {
+    right: auto;
+    left: 5px;
+  }
+
+  .input-example .example-button {
+    min-height: 30px;
+    padding-inline: 6px;
+    font-size: 8px;
+  }
+
+  .field input:placeholder-shown {
+    padding-right: 98px;
+  }
+
+  html[dir="rtl"] .field input:placeholder-shown {
+    padding-right: 13px;
+    padding-left: 98px;
+  }
+}
+
