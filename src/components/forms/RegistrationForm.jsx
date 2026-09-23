@@ -20,8 +20,8 @@ import { buildSms, normalizeCnic, normalizeDate, normalizeVehicle } from "../../
 import { validateRegistration } from "../../utils/validation";
 
 function FieldStatus({ state, count, total }) {
-  if (state === "valid") return <span className="field-status valid"><Check size={13} /> Looks good</span>;
-  if (state === "error") return <span className="field-status error">Check this</span>;
+  if (state === "valid") return <span className="field-status valid"><Check size={13} /> درست ہے</span>;
+  if (state === "error") return <span className="field-status error">چیک کریں</span>;
   if (count !== undefined && total !== undefined && count > 0) return <span className="field-status count">{count}/{total}</span>;
   return null;
 }
@@ -65,15 +65,15 @@ function FieldExample({ src, alt, title }) {
             onMouseDown={(event) => event.stopPropagation()}
             role="dialog"
             aria-modal="true"
-            aria-label={`${title} example`}
+            aria-label={`${title} کی مثال`}
           >
-            <button className="modal-close" type="button" onClick={() => setOpen(false)} aria-label="Close image">
+            <button className="modal-close" type="button" onClick={() => setOpen(false)} aria-label="تصویر بند کریں">
               <X size={18} />
             </button>
-            <div className="modal-kicker">Example</div>
+            <div className="modal-kicker">مثال</div>
             <h3>{title}</h3>
             <div className="image-frame"><img src={src} alt={alt} /></div>
-            <p>Use the matching information from your vehicle document.</p>
+            <p>اپنی گاڑی کے کاغذات میں موجود یہی معلومات استعمال کریں۔</p>
           </motion.div>
         </motion.div>
       )}
@@ -82,8 +82,8 @@ function FieldExample({ src, alt, title }) {
 
   return (
     <>
-      <button className="example-button" type="button" onClick={() => setOpen(true)} aria-label={`View ${title} example`}>
-        <ImageIcon size={14} /> <span>See example</span>
+      <button className="example-button" type="button" onClick={() => setOpen(true)} aria-label={`${title} کی مثال دیکھیں`}>
+        <ImageIcon size={14} /> <span>مثال دیکھیں</span>
       </button>
       {typeof document !== "undefined" ? createPortal(modal, document.body) : null}
     </>
@@ -94,7 +94,7 @@ function SharePanel() {
   const [copied, setCopied] = useState(false);
   const url = window.location.href;
   const encodedUrl = encodeURIComponent(url);
-  const shareText = "Use this guide to prepare the 9771 registration SMS.";
+  const shareText = "9771 رجسٹریشن SMS تیار کرنے کے لیے یہ گائیڈ دیکھیں۔";
   const encodedText = encodeURIComponent(`${shareText} ${url}`);
   const openShare = (target) => window.open(target, "_blank", "noopener,noreferrer,width=720,height=640");
   const copyLink = async () => {
@@ -109,16 +109,16 @@ function SharePanel() {
     <div className="share-panel">
       <div className="share-panel-head">
         <div>
-          <span className="eyebrow">Share the guide</span>
-          <strong>Send the link, not your personal details.</strong>
+          <span className="eyebrow">گائیڈ شیئر کریں</span>
+          <strong>لنک شیئر کریں، اپنی ذاتی معلومات نہیں۔</strong>
         </div>
         <LinkIcon size={16} />
       </div>
       <div className="share-grid">
-        <button type="button" className="share-card whatsapp" onClick={() => openShare(`https://wa.me/?text=${encodedText}`)}><b>WA</b><span>WhatsApp</span></button>
-        <button type="button" className="share-card facebook" onClick={() => openShare(`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`)}><b>f</b><span>Facebook</span></button>
-        <button type="button" className="share-card telegram" onClick={() => openShare(`https://t.me/share/url?url=${encodedUrl}&text=${encodeURIComponent(shareText)}`)}><b>↗</b><span>Telegram</span></button>
-        <button type="button" className="share-card copy-link" onClick={copyLink}><b><LinkIcon size={15} /></b><span>{copied ? "Copied" : "Copy link"}</span></button>
+        <button type="button" className="share-card whatsapp" onClick={() => openShare(`https://wa.me/?text=${encodedText}`)}><b>WA</b><span>واٹس ایپ</span></button>
+        <button type="button" className="share-card facebook" onClick={() => openShare(`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`)}><b>f</b><span>فیس بک</span></button>
+        <button type="button" className="share-card telegram" onClick={() => openShare(`https://t.me/share/url?url=${encodedUrl}&text=${encodeURIComponent(shareText)}`)}><b>↗</b><span>ٹیلیگرام</span></button>
+        <button type="button" className="share-card copy-link" onClick={copyLink}><b><LinkIcon size={15} /></b><span>{copied ? "کاپی ہو گیا" : "لنک کاپی کریں"}</span></button>
       </div>
     </div>
   );
@@ -140,7 +140,7 @@ function SuccessModal({ sms, onClose }) {
           aria-labelledby="success-title"
           onClick={(event) => event.stopPropagation()}
         >
-          <button className="modal-close" type="button" onClick={onClose} aria-label="Close confirmation"><X size={18} /></button>
+          <button className="modal-close" type="button" onClick={onClose} aria-label="تصدیق بند کریں"><X size={18} /></button>
           <div className="success-icon-stage" aria-hidden="true">
             <motion.div className="success-icon-ring" initial={{ scale: 0.6, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 0.5 }} />
             <motion.div className="success-icon" initial={{ scale: 0.5, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ delay: 0.05, type: "spring", stiffness: 420, damping: 24 }}>
@@ -149,25 +149,25 @@ function SuccessModal({ sms, onClose }) {
               </motion.svg>
             </motion.div>
           </div>
-          <span className="success-kicker">Copied to clipboard</span>
-          <h2 id="success-title">Your message is ready.</h2>
-          <p className="success-subtitle">The exact text below is now on your clipboard. One step remains.</p>
+          <span className="success-kicker">کلپ بورڈ میں کاپی ہو گیا</span>
+          <h2 id="success-title">آپ کا SMS تیار ہے۔</h2>
+          <p className="success-subtitle">نیچے دیا گیا بالکل یہی متن کاپی ہو گیا ہے۔ اب اسے اپنے فون سے بھیجیں۔</p>
 
           <div className="success-sms">
-            <span>SMS TO {scheme.smsRecipient}</span>
+            <span>SMS برائے {scheme.smsRecipient}</span>
             <code>{sms}</code>
           </div>
 
           <div className="next-step">
             <div className="next-step-icon"><Send size={16} /></div>
-            <div><strong>Send the message</strong><p>Open your phone's Messages app and send this exact text to <b>{scheme.smsRecipient}</b>.</p></div>
+            <div><strong>پیغام بھیجیں</strong><p>اپنے فون کی Messages ایپ کھولیں اور یہی پیغام اس نمبر پر بھیجیں: <b>{scheme.smsRecipient}</b>.</p></div>
           </div>
 
           <button type="button" className="share-toggle" onClick={() => setShareOpen((value) => !value)}>
-            <Share2 size={16} /> {shareOpen ? "Close share options" : "Share this guide"}
+            <Share2 size={16} /> {shareOpen ? "شیئر کے آپشن بند کریں" : "یہ گائیڈ شیئر کریں"}
           </button>
           <AnimatePresence initial={false}>{shareOpen && <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }}><SharePanel /></motion.div>}</AnimatePresence>
-          <button type="button" className="done-button" onClick={onClose}>Done</button>
+          <button type="button" className="done-button" onClick={onClose}>ٹھیک ہے</button>
         </motion.div>
       </motion.div>
     </AnimatePresence>
@@ -188,9 +188,9 @@ function TextField({ id, label, hint, placeholder, value, onChange, onBlur, erro
         {valid && <span className="input-valid"><Check size={15} /></span>}
       </div>
       <div className="field-footer">
-        <span>{valid ? "Ready for the SMS" : hint}</span>
+        <span>{valid ? "SMS کے لیے تیار" : hint}</span>
       </div>
-      {error && touched && <p className="field-error" id={`${id}-error`}><span>Error:</span> {error}</p>}
+      {error && touched && <p className="field-error" id={`${id}-error`}><span>غلطی:</span> {error}</p>}
     </div>
   );
 }
@@ -224,7 +224,7 @@ export default function RegistrationForm() {
   const shareSite = async () => {
     const url = window.location.href;
     try {
-      if (navigator.share) await navigator.share({ title: "9771 SMS Guide", text: "Prepare your 9771 registration SMS.", url });
+      if (navigator.share) await navigator.share({ title: "9771 SMS گائیڈ", text: "اپنا 9771 رجسٹریشن SMS تیار کریں۔", url });
       else await navigator.clipboard.writeText(url);
     } catch {}
   };
@@ -241,12 +241,12 @@ export default function RegistrationForm() {
       <section className="builder-section" id="sms-builder">
         <div className="builder-topline">
           <div>
-            <span className="eyebrow">01 / SMS builder</span>
-            <h2>Enter the details once.</h2>
-            <p>We format the message locally in your browser. Nothing is submitted from this page.</p>
+            <span className="eyebrow">01 / SMS تیار کریں</span>
+            <h2>اپنی معلومات ایک بار درج کریں۔</h2>
+            <p>SMS آپ کے براؤزر میں ہی تیار ہوتا ہے۔ اس صفحے سے کوئی درخواست جمع نہیں ہوتی۔</p>
           </div>
-          <div className="progress-block" aria-label={`${readyCount} of 4 details complete`}>
-            <div className="progress-meta"><span>{readyCount}/4 complete</span><strong>{progress}%</strong></div>
+          <div className="progress-block" aria-label={`${readyCount} میں سے 4 معلومات مکمل`}>
+            <div className="progress-meta"><span>{readyCount}/4 مکمل</span><strong>{progress}%</strong></div>
             <div className="progress-track"><span style={{ width: `${progress}%` }} /></div>
           </div>
         </div>
@@ -254,21 +254,21 @@ export default function RegistrationForm() {
         <div className="builder-shell">
           <div className="builder-fields">
             <div className="builder-heading-row">
-              <div><span className="section-chip">Your information</span><h3>Let's build your message.</h3></div>
-              <div className="browser-only"><ShieldCheck size={15} /> Browser only</div>
+              <div><span className="section-chip">آپ کی معلومات</span><h3>اپنا SMS تیار کریں۔</h3></div>
+              <div className="browser-only"><ShieldCheck size={15} /> صرف براؤزر میں</div>
             </div>
 
             {submitted && Object.keys(errors).length > 0 && (
               <div className="error-summary" role="alert">
-                <div><strong>Check the highlighted fields.</strong><span>Each message below tells you exactly what to change.</span></div>
+                <div><strong>جن خانوں کو نشان زد کیا گیا ہے انہیں چیک کریں۔</strong><span>نیچے دیا گیا پیغام بتاتا ہے کہ کیا درست کرنا ہے۔</span></div>
               </div>
             )}
 
             <form noValidate onSubmit={(event) => { event.preventDefault(); copySms(); }}>
               <TextField
                 id="cnic"
-                label="CNIC"
-                hint="13 digits"
+                label="شناختی کارڈ نمبر (CNIC)"
+                hint="13 ہندسے"
                 placeholder="3520212345671"
                 value={form.cnic}
                 onChange={(value) => update("cnic", value)}
@@ -283,39 +283,39 @@ export default function RegistrationForm() {
 
               <TextField
                 id="vehicle"
-                label="Vehicle number"
-                hint="3–12 letters or numbers"
-                placeholder="ALE-14-201"
+                label="گاڑی نمبر"
+                hint="3–12 حروف، اعداد یا -"
+                placeholder="ALE-14-201 یا ALE14201"
                 value={form.vehicle}
                 onChange={(value) => update("vehicle", value)}
                 onBlur={() => markTouched("vehicle")}
                 error={errors.vehicle}
                 touched={touched.vehicle || submitted}
-                valid={/^[A-Z0-9]{3,12}$/.test(form.vehicle)}
+                valid={/^(?=.{3,12}$)[A-Z0-9]+(?:-[A-Z0-9]+)*$/.test(form.vehicle)}
                 count={form.vehicle.length}
                 total={12}
-                example={<FieldExample src="/images/vehicle-registration.jpg" alt="Example showing a vehicle registration number" title="Vehicle number" />}
+                example={<FieldExample src="/images/vehicle-registration.jpg" alt="گاڑی نمبر کی مثال" title="گاڑی نمبر" />}
               />
 
               <div className={`field ${errors.province && (touched.province || submitted) ? "error" : form.province ? "valid" : "neutral"}`}>
                 <div className="field-head">
-                  <div><label htmlFor="province">Province / region</label><span>Choose one</span></div>
+                  <div><label htmlFor="province">صوبہ / علاقہ</label><span>ایک منتخب کریں</span></div>
                   <FieldStatus state={form.province ? "valid" : "neutral"} />
                 </div>
                 <div className="select-wrap">
                   <select id="province" value={form.province} onChange={(event) => update("province", event.target.value)} onBlur={() => markTouched("province")} aria-invalid={Boolean(errors.province && (touched.province || submitted))}>
-                    <option value="">Select province / region</option>
+                    <option value="">صوبہ / علاقہ منتخب کریں</option>
                     {PROVINCES.map((item) => <option key={item.code} value={item.code}>{item.name} ({item.code})</option>)}
                   </select>
                   <ChevronDown size={17} />
                 </div>
-                <div className="field-footer"><span>{form.province ? "Ready for the SMS" : "Select the region shown on your vehicle record"}</span></div>
-                {errors.province && (touched.province || submitted) && <p className="field-error"><span>Error:</span> {errors.province}</p>}
+                <div className="field-footer"><span>{form.province ? "SMS کے لیے تیار" : "اپنے گاڑی کے ریکارڈ والا صوبہ یا علاقہ منتخب کریں"}</span></div>
+                {errors.province && (touched.province || submitted) && <p className="field-error"><span>غلطی:</span> {errors.province}</p>}
               </div>
 
               <TextField
                 id="date"
-                label="Vehicle registration date"
+                label="گاڑی کی رجسٹریشن کی تاریخ"
                 hint="DDMMYYYY"
                 placeholder="15082015"
                 value={form.date}
@@ -327,53 +327,53 @@ export default function RegistrationForm() {
                 count={form.date.length}
                 total={8}
                 inputMode="numeric"
-                example={<FieldExample src="/images/registration-date.jpg" alt="Example showing the vehicle registration date" title="Registration date" />}
+                example={<FieldExample src="/images/registration-date.jpg" alt="رجسٹریشن کی تاریخ کی مثال" title="رجسٹریشن کی تاریخ" />}
               />
 
               <div className="builder-actions">
-                <button className="primary-action" type="submit"><Copy size={17} /> Copy SMS</button>
-                <button className="secondary-action" type="button" onClick={shareSite}><Share2 size={17} /> Share guide</button>
-                <button className="text-action" type="button" onClick={reset}><RotateCcw size={15} /> Reset</button>
+                <button className="primary-action" type="submit"><Copy size={17} /> SMS کاپی کریں</button>
+                <button className="secondary-action" type="button" onClick={shareSite}><Share2 size={17} /> گائیڈ شیئر کریں</button>
+                <button className="text-action" type="button" onClick={reset}><RotateCcw size={15} /> دوبارہ شروع کریں</button>
               </div>
             </form>
           </div>
 
           <aside className={`preview-panel ${sms ? "ready" : ""}`} aria-live="polite">
             <div className="preview-panel-top">
-              <div><span className="eyebrow">02 / live preview</span><h3>Message to {scheme.smsRecipient}</h3></div>
-              <span className={`preview-state ${sms ? "ready" : ""}`}><i /> {sms ? "Ready" : "Waiting"}</span>
+              <div><span className="eyebrow">02 / SMS کا پیش منظر</span><h3>SMS برائے {scheme.smsRecipient}</h3></div>
+              <span className={`preview-state ${sms ? "ready" : ""}`}><i /> {sms ? "تیار" : "انتظار"}</span>
             </div>
 
             <div className="sms-sheet">
-              <div className="sms-sheet-head"><div className="recipient-avatar">9</div><div><strong>{scheme.smsRecipient}</strong><span>SMS destination</span></div></div>
+              <div className="sms-sheet-head"><div className="recipient-avatar">9</div><div><strong>{scheme.smsRecipient}</strong><span>SMS نمبر</span></div></div>
               <div className="sms-sheet-body">
                 <AnimatePresence mode="wait">
                   {sms ? (
                     <motion.div className="sms-complete" key={sms} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }}>
-                      <span className="sms-badge">Ready</span>
+                      <span className="sms-badge">تیار</span>
                       <code>{sms}</code>
                     </motion.div>
                   ) : (
                     <motion.div className="sms-placeholder" key="placeholder" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
                       <span className="placeholder-line wide" /><span className="placeholder-line" /><span className="placeholder-line short" />
-                      <p>Complete the four fields and your finished message will appear here.</p>
+                      <p>چاروں معلومات مکمل کریں، تیار SMS یہاں نظر آئے گا۔</p>
                     </motion.div>
                   )}
                 </AnimatePresence>
               </div>
-              <div className="sms-sheet-footer"><span>Send exactly this text</span><strong>{scheme.smsRecipient}</strong></div>
+              <div className="sms-sheet-footer"><span>یہی متن بھیجیں</span><strong>{scheme.smsRecipient}</strong></div>
             </div>
 
             <div className="preview-callout">
               <div className="preview-callout-icon"><CheckCircle2 size={16} /></div>
-              <div><strong>{sms ? "Everything checks out." : "Nothing is sent from here."}</strong><span>{sms ? "Copy the message, then send it using your phone's SMS app." : "This page only prepares text. You stay in control of sending."}</span></div>
+              <div><strong>{sms ? "تمام معلومات درست ہیں۔" : "یہاں سے کچھ نہیں بھیجا جاتا۔"}</strong><span>{sms ? "SMS کاپی کریں اور اپنے فون کی SMS ایپ سے خود بھیجیں۔" : "یہ صفحہ صرف متن تیار کرتا ہے۔ SMS آپ خود بھیجتے ہیں۔"}</span></div>
             </div>
 
-            <div className="preview-privacy"><ShieldCheck size={15} /><span>Your entered details remain on this page and are not submitted to this website.</span></div>
+            <div className="preview-privacy"><ShieldCheck size={15} /><span>آپ کی درج کردہ معلومات اسی صفحے پر رہتی ہیں اور اس ویب سائٹ کو جمع نہیں کرائی جاتیں۔</span></div>
           </aside>
         </div>
 
-        <div className="builder-footnote"><Clipboard size={15} /><span>Your browser handles the formatting. No account, form submission or database is needed.</span></div>
+        <div className="builder-footnote"><Clipboard size={15} /><span>فارمیٹ آپ کا براؤزر تیار کرتا ہے۔ اکاؤنٹ، فارم جمع کرانے یا ڈیٹا بیس کی ضرورت نہیں۔</span></div>
       </section>
 
       {success && <SuccessModal sms={sms} onClose={() => setSuccess(false)} />}

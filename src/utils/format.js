@@ -1,5 +1,5 @@
 export function normalizeVehicle(value) {
-  return value.toUpperCase().replace(/[^A-Z0-9]/g, "");
+  return value.toUpperCase().replace(/[^A-Z0-9-]/g, "").slice(0, 12);
 }
 
 export function normalizeCnic(value) {
@@ -16,5 +16,5 @@ export function buildSms({ cnic, vehicle, province, date }) {
 
 export function formatCnic(value) {
   const digits = normalizeCnic(value);
-  return digits.length <= 5 ? digits : `${digits.slice(0,5)}-${digits.slice(5,12)}-${digits.slice(12)}`;
+  return digits.length <= 5 ? digits : `${digits.slice(0, 5)}-${digits.slice(5, 12)}-${digits.slice(12)}`;
 }

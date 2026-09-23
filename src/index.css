@@ -547,3 +547,104 @@ body.menu-open { overflow: hidden; }
   .image-modal h3 { font-size: 20px; }
   .image-frame img { max-height: calc(100dvh - 160px); }
 }
+
+/* Urdu / RTL content refinement */
+html[dir="rtl"], html[dir="rtl"] body {
+  font-family: "Noto Naskh Arabic", "Noto Nastaliq Urdu", "Segoe UI", Tahoma, Arial, sans-serif;
+}
+html[dir="rtl"] body { direction: rtl; }
+html[dir="rtl"] .hero-copy h1,
+html[dir="rtl"] .intro-band h2,
+html[dir="rtl"] .builder-topline h2,
+html[dir="rtl"] .builder-heading-row h3,
+html[dir="rtl"] .preview-panel-top h3,
+html[dir="rtl"] .process-heading h2,
+html[dir="rtl"] .flow-card h3,
+html[dir="rtl"] .after-main h2,
+html[dir="rtl"] .trust-card h3,
+html[dir="rtl"] .page h1,
+html[dir="rtl"] .page h2,
+html[dir="rtl"] .success-modal h2 {
+  letter-spacing: 0;
+}
+html[dir="rtl"] .hero-copy h1 { line-height: 1.15; }
+html[dir="rtl"] .hero-lede,
+html[dir="rtl"] .intro-copy p,
+html[dir="rtl"] .process-heading > p,
+html[dir="rtl"] .flow-card p,
+html[dir="rtl"] .after-main p,
+html[dir="rtl"] .page-lede,
+html[dir="rtl"] .prose p,
+html[dir="rtl"] .faq p,
+html[dir="rtl"] .final-note p,
+html[dir="rtl"] .trust-card p { line-height: 1.95; }
+html[dir="rtl"] .hero-kicker,
+html[dir="rtl"] .hero-note,
+html[dir="rtl"] .hero-rail,
+html[dir="rtl"] .field-head,
+html[dir="rtl"] .field-footer,
+html[dir="rtl"] .preview-panel-top,
+html[dir="rtl"] .sms-sheet-head,
+html[dir="rtl"] .sms-sheet-footer,
+html[dir="rtl"] .preview-callout,
+html[dir="rtl"] .preview-privacy,
+html[dir="rtl"] .builder-footnote,
+html[dir="rtl"] .after-send-top,
+html[dir="rtl"] .trust-card,
+html[dir="rtl"] .footer-brand,
+html[dir="rtl"] .footer-privacy,
+html[dir="rtl"] .mobile-menu-badge { direction: rtl; }
+html[dir="rtl"] .hero-number { right: auto; left: 2%; }
+html[dir="rtl"] .hero-annotation { right: auto; left: 4%; }
+html[dir="rtl"] .receipt-time { margin-left: 0; margin-right: auto; }
+html[dir="rtl"] .flow-card { border-right: 0; border-left: 1px solid #294035; }
+html[dir="rtl"] .flow-card:last-child { border-left: 0; }
+html[dir="rtl"] .flow-arrow { right: auto; left: 18px; transform: rotate(180deg); }
+html[dir="rtl"] .after-send { border-left: 0; border-right: 1px solid #d7ddd8; }
+html[dir="rtl"] .input-example { right: auto; left: 8px; }
+html[dir="rtl"] .input-valid { right: auto; left: 13px; }
+html[dir="rtl"] .field input:not(:placeholder-shown) { padding-right: 15px; padding-left: 48px; }
+html[dir="rtl"] .field input,
+html[dir="rtl"] .field select { direction: rtl; text-align: right; }
+html[dir="rtl"] .field input#cnic,
+html[dir="rtl"] .field input#vehicle,
+html[dir="rtl"] .field input#date,
+html[dir="rtl"] .sms-complete code,
+html[dir="rtl"] .success-sms code,
+html[dir="rtl"] .receipt-copy { direction: ltr; text-align: left; unicode-bidi: plaintext; }
+html[dir="rtl"] .select-wrap svg { right: auto; left: 14px; }
+html[dir="rtl"] .select-wrap select { padding-right: 15px; padding-left: 44px; }
+html[dir="rtl"] .field-error span { margin-right: 0; margin-left: 4px; }
+html[dir="rtl"] .builder-fields { border-right: 0; border-left: 1px solid #d6ddd7; }
+html[dir="rtl"] .mobile-menu { right: auto; left: 0; margin: 10px 0 0 11px; }
+html[dir="rtl"] .mobile-menu-links button,
+html[dir="rtl"] .mobile-menu-links a { text-align: right; }
+html[dir="rtl"] .mobile-menu-links button > span,
+html[dir="rtl"] .mobile-menu-links a > span { order: 3; }
+html[dir="rtl"] .mobile-menu-links svg { margin-right: auto; }
+html[dir="rtl"] .success-subtitle,
+html[dir="rtl"] .next-step,
+html[dir="rtl"] .share-panel,
+html[dir="rtl"] .image-modal,
+html[dir="rtl"] .page,
+html[dir="rtl"] .prose { direction: rtl; }
+html[dir="rtl"] .next-step { text-align: right; }
+html[dir="rtl"] .next-step-icon { order: 2; }
+html[dir="rtl"] .share-panel-head { direction: rtl; }
+html[dir="rtl"] .footer-links { direction: rtl; }
+
+@media (max-width: 900px) {
+  html[dir="rtl"] .builder-fields { border-left: 0; border-bottom: 1px solid #d6ddd7; }
+}
+
+@media (max-width: 720px) {
+  html[dir="rtl"] .hero-number { left: 2%; right: auto; }
+  html[dir="rtl"] .hero-annotation { left: 3%; right: auto; }
+  html[dir="rtl"] .input-example { left: 8px; right: auto; }
+}
+
+@media (max-width: 420px) {
+  html[dir="rtl"] .hero-number { left: 0; right: auto; }
+  html[dir="rtl"] .field input:placeholder-shown { padding-left: 112px; padding-right: 15px; }
+  html[dir="rtl"] .input-example { left: 7px; right: auto; }
+}

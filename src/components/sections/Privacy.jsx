@@ -1,1 +1,19 @@
-export default function Privacy(){return <main className="page wrap"><p className="eyebrow">Privacy</p><h1>Your information stays on your device.</h1><div className="prose"><p>This guide is designed to prepare an SMS without collecting the information you enter.</p><h2>No database</h2><p>The CNIC, vehicle number, province and date fields are processed in your browser. This application does not include a database or form submission endpoint.</p><h2>No account</h2><p>You do not need to create an account or sign in to use the guide.</p><h2>Copying is your choice</h2><p>The site only copies the generated SMS when you press the Copy SMS button. It does not send the message for you.</p><h2>Important</h2><p>After copying, the information can exist in your device clipboard or messaging application according to your device's own settings. This website does not control those systems.</p></div></main> }
+export default function Privacy() {
+  return (
+    <main className="page wrap">
+      <p className="eyebrow">رازداری</p>
+      <h1>آپ کی معلومات آپ کے آلے پر رہتی ہیں۔</h1>
+      <div className="prose">
+        <p>یہ گائیڈ SMS تیار کرنے کے لیے بنائی گئی ہے۔ آپ جو معلومات لکھتے ہیں وہ اس ویب سائٹ کے کسی رجسٹریشن فارم کے ذریعے جمع نہیں کی جاتیں۔</p>
+        <h2>کوئی ڈیٹا بیس نہیں</h2>
+        <p>CNIC، گاڑی نمبر، صوبہ اور تاریخ براؤزر میں ہی فارمیٹ ہوتی ہے۔ اس ایپ میں ڈیٹا بیس یا فارم جمع کرنے کا بیک اینڈ موجود نہیں۔</p>
+        <h2>اکاؤنٹ کی ضرورت نہیں</h2>
+        <p>گائیڈ استعمال کرنے کے لیے اکاؤنٹ یا سائن اِن کی ضرورت نہیں ہے۔</p>
+        <h2>SMS آپ خود بھیجتے ہیں</h2>
+        <p>ویب سائٹ صرف تیار کردہ SMS کو کاپی کرتی ہے۔ 9771 پر پیغام آپ اپنے فون سے خود بھیجتے ہیں۔</p>
+        <h2>اہم بات</h2>
+        <p>کاپی کرنے کے بعد معلومات آپ کے فون کے clipboard یا messaging app میں آپ کے آلے کی اپنی settings کے مطابق موجود ہو سکتی ہیں۔ اس حصے کو یہ ویب سائٹ کنٹرول نہیں کرتی۔</p>
+      </div>
+    </main>
+  );
+}

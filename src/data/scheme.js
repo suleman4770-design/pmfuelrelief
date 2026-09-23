@@ -1,41 +1,42 @@
-// IMPORTANT: Verify every scheme-specific value against current official sources before publishing.
+// Scheme-specific information should be checked against current official sources before publishing.
 export const scheme = {
   smsRecipient: "9771",
   command: "REG",
   tokenCommand: "TOK",
-  updated: "21 September 2026",
-  officialUrl: "https://pmfuelrelief.pk"
+  updated: "23 ستمبر 2026",
+  officialUrl: "https://pmfuelrelief.pk",
 };
 
 export const PROVINCES = [
-  { code: "P", name: "Punjab" },
-  { code: "S", name: "Sindh" },
-  { code: "K", name: "Khyber Pakhtunkhwa" },
-  { code: "B", name: "Balochistan" },
-  { code: "I", name: "Islamabad" },
-  { code: "A", name: "Azad Jammu & Kashmir" },
-  { code: "G", name: "Gilgit-Baltistan" }
+  { code: "P", name: "پنجاب" },
+  { code: "S", name: "سندھ" },
+  { code: "K", name: "خیبر پختونخوا" },
+  { code: "B", name: "بلوچستان" },
+  { code: "I", name: "اسلام آباد" },
+  { code: "A", name: "آزاد جموں و کشمیر" },
+  { code: "G", name: "گلگت بلتستان" },
 ];
 
 export const provinceCodes = PROVINCES;
 
 export const faqs = [
-  ["What is the 9771 SMS registration format for PM Fuel Relief?", "The guide prepares the REG message from your CNIC, vehicle number, province code and registration date. Check the latest official instructions before sending it."],
-  ["How do I use 9771 for PM Fuel Relief registration?", "Use the browser builder to check the four fields, copy the finished SMS, and send it yourself only after confirming the current official instructions."],
-  ["Does this website save my information?", "No. The form is processed in your browser only. It does not send the entered values to this website's server."],
-  ["Can I edit my information before copying?", "Yes. Change any field and the SMS preview updates immediately."],
-  ["What happens if I type lowercase letters in the vehicle number?", "The vehicle number is automatically displayed in uppercase. For example, ale-14-201 becomes ALE14201 in the generated SMS."],
-  ["Are the document images official?", "Only images you place in public/images should be treated as your supplied source material. The built-in guide uses placeholders so it does not pretend to be an official document."],
-  ["Does the site send the SMS for me?", "No. It prepares the text and copies it. You choose when and where to send it."],
-  ["Which province code should I use for 9771 registration?", "Choose the province or region code shown for your vehicle record in the current instructions. The builder lets you select the code rather than type it manually."],
-  ["What date format does the 9771 SMS use?", "The registration date field in this guide uses DDMMYYYY. Check the vehicle record and current official instructions before copying the message."],
-  ["Can the PM Fuel Relief 9771 rules change?", "Yes. Government schemes and SMS requirements can change. Always check the latest official instructions before sending personal information."]
+  ["9771 پر رجسٹریشن کا طریقہ کیا ہے؟", "اپنی گاڑی کے ریکارڈ کے مطابق CNIC، گاڑی نمبر، صوبہ کوڈ اور رجسٹریشن کی تاریخ تیار کریں۔ موجودہ سرکاری ہدایات کے مطابق REG میسج 9771 پر بھیجیں۔"],
+  ["9771 SMS کا درست فارمیٹ کیا ہے؟", "فارمیٹ یہ ہے: REG CNIC Vehicle Number Province Code Registration Date۔ اس گائیڈ میں چاروں معلومات بھرنے کے بعد مکمل SMS سامنے آ جاتا ہے۔"],
+  ["کیا گاڑی نمبر میں - لگا سکتے ہیں؟", "جی۔ اس گائیڈ میں ALE-14-201 اور ALE14201 دونوں جیسے نمبر درج کیے جا سکتے ہیں، بشرطیکہ آپ کی گاڑی کے سرکاری ریکارڈ سے نمبر درست ہو۔"],
+  ["رجسٹریشن کی تاریخ کس فارمیٹ میں لکھنی ہے؟", "تاریخ DDMMYYYY فارمیٹ میں لکھیں، یعنی دن، مہینہ اور سال کے 8 ہندسے۔ مثال: 15 اگست 2015 کے لیے 15082015۔ موجودہ سرکاری ہدایات بھی چیک کریں۔"],
+  ["پنجاب کے لیے 9771 صوبہ کوڈ کیا ہے؟", "پنجاب کے لیے کوڈ P ہے۔ گاڑی کے رجسٹریشن ریکارڈ کے مطابق درست صوبہ منتخب کریں۔"],
+  ["کیا یہ ویب سائٹ میری CNIC محفوظ کرتی ہے؟", "نہیں۔ یہ گائیڈ معلومات کو اسی براؤزر میں فارمیٹ کرتی ہے۔ یہ ویب سائٹ رجسٹریشن فارم کے ذریعے CNIC جمع نہیں کرتی۔"],
+  ["کیا ویب سائٹ خود 9771 پر SMS بھیجتی ہے؟", "نہیں۔ ویب سائٹ صرف SMS تیار اور کاپی کرتی ہے۔ SMS آپ اپنے فون سے خود بھیجتے ہیں۔"],
+  ["REG کے بعد کیا کرنا ہے؟", "سرکاری ہدایات کے مطابق کامیاب رجسٹریشن کے بعد TOK کے ذریعے فیول ٹوکن حاصل کرنے کا طریقہ بتایا گیا ہے۔ تازہ ہدایات ہمیشہ سرکاری ذریعہ سے چیک کریں۔"],
+  ["کیا 9771 کی رجسٹریشن SMS فیس ہے؟", "ریڈیو پاکستان نے 17 ستمبر 2026 کو رپورٹ کیا کہ رجسٹریشن SMS مفت کر دی گئی ہے۔ کسی نئی تبدیلی کے لیے سرکاری اعلان چیک کریں۔"],
+  ["اگر 9771 غلط فارمیٹ کا جواب دے تو کیا کریں؟", "چار معلومات کا ترتیب سے دوبارہ جائزہ لیں: CNIC، گاڑی نمبر، صوبہ کوڈ اور رجسٹریشن تاریخ۔ پھر موجودہ سرکاری فارمیٹ کے مطابق SMS دوبارہ تیار کریں۔"],
+  ["کیا یہ سرکاری ویب سائٹ ہے؟", "نہیں۔ یہ ایک آزاد معلوماتی گائیڈ ہے۔ سرکاری معلومات کے لیے pmfuelrelief.pk دیکھیں۔"],
 ];
 
 export const mistakes = [
-  "Leaving the CNIC incomplete",
-  "Using letters or punctuation in the CNIC field",
-  "Entering a vehicle number with spaces or dashes when the required format does not allow them",
-  "Using an unsupported province code",
-  "Using a registration date that does not match the required format"
+  "CNIC کے 13 ہندسے مکمل نہ لکھنا",
+  "گاڑی نمبر میں غلط حروف یا غیر ضروری اسپیس ڈالنا",
+  "گاڑی نمبر میں موجود - کو غلط طریقے سے ہٹانا یا بڑھانا",
+  "غلط صوبہ کوڈ منتخب کرنا",
+  "رجسٹریشن کی تاریخ غلط فارمیٹ میں لکھنا",
 ];
