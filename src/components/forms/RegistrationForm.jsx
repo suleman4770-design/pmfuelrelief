@@ -322,7 +322,7 @@ export default function RegistrationForm() {
               <TextField
                 id="date"
                 label="گاڑی کی رجسٹریشن کی تاریخ"
-                hint="DDMMYYYY"
+                hint="DDMMYYYY · یکم جنوری 2006 یا بعد کی"
                 placeholder="15082015"
                 value={form.date}
                 onChange={(value) => update("date", value)}

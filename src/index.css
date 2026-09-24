@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu", "Noto Naskh Arabic", Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, Arial, sans-serif;
   color: #152119;
   background: #f1f0ea;
   font-synthesis: none;
@@ -20,7 +20,7 @@
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; min-width: 320px; background: var(--paper); }
+body { margin: 0; min-width: 320px; background: var(--paper); line-height: 1.75; }
 button, input, select { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 button { cursor: pointer; }
@@ -550,9 +550,45 @@ body.menu-open { overflow: hidden; }
 
 /* Urdu / RTL content refinement */
 html[dir="rtl"], html[dir="rtl"] body {
-  font-family: "Noto Naskh Arabic", "Noto Nastaliq Urdu", "Segoe UI", Tahoma, Arial, sans-serif;
+  font-family: "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu", "Noto Naskh Arabic", "Segoe UI", Tahoma, Arial, sans-serif;
+  line-height: 1.9;
 }
 html[dir="rtl"] body { direction: rtl; }
+/* Nastaliq typography: Jameel Noori when installed, otherwise web-loaded Noto Nastaliq Urdu. */
+html[dir="rtl"] body,
+html[dir="rtl"] button,
+html[dir="rtl"] input,
+html[dir="rtl"] select,
+html[dir="rtl"] textarea {
+  font-family: "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu", "Noto Naskh Arabic", "Segoe UI", Tahoma, Arial, sans-serif;
+}
+
+html[dir="rtl"] .hero-copy p,
+html[dir="rtl"] .intro-band p,
+html[dir="rtl"] .builder-heading-row p,
+html[dir="rtl"] .field-hint,
+html[dir="rtl"] .field-error,
+html[dir="rtl"] .field-help,
+html[dir="rtl"] .preview-callout,
+html[dir="rtl"] .preview-privacy,
+html[dir="rtl"] .trust-card p,
+html[dir="rtl"] .flow-card p,
+html[dir="rtl"] .after-main p,
+html[dir="rtl"] .page p,
+html[dir="rtl"] .faq-answer {
+  line-height: 2;
+}
+
+html[dir="rtl"] .hero-copy h1,
+html[dir="rtl"] .intro-band h2,
+html[dir="rtl"] .builder-heading-row h3,
+html[dir="rtl"] .process-heading h2,
+html[dir="rtl"] .flow-card h3,
+html[dir="rtl"] .after-main h2,
+html[dir="rtl"] .page h1 {
+  line-height: 1.55;
+}
+
 html[dir="rtl"] .hero-copy h1,
 html[dir="rtl"] .intro-band h2,
 html[dir="rtl"] .builder-topline h2,

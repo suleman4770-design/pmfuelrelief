@@ -11,11 +11,11 @@ const detectedUrl =
   process.env.SITE_URL ||
   process.env.VERCEL_PROJECT_PRODUCTION_URL ||
   process.env.VERCEL_URL ||
-  "http://localhost:5173";
+  "https://pmfuelrelief.vercel.app";
 
 const siteUrl = normalizeUrl(detectedUrl);
-if (!process.env.SITE_URL && siteUrl.startsWith("http://localhost")) {
-  console.warn("SITE_URL is not set; generating local sitemap URLs. Set SITE_URL for production deployments.");
+if (!process.env.SITE_URL && !process.env.VERCEL_PROJECT_PRODUCTION_URL && !process.env.VERCEL_URL) {
+  console.info(`SITE_URL is not set; using the production site URL ${siteUrl}. Set SITE_URL to override it.`);
 }
 
 const publicDir = resolve("public");
