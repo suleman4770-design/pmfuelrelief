@@ -768,22 +768,6 @@ body { min-width: 0; overflow-x: clip; }
   .field-status { flex: 0 0 auto; }
   .field input, .field select { height: 52px; font-size: 16px; min-width: 0; }
 
-  /* Example actions move below the input on phones so they never cover the placeholder. */
-  .input-example,
-  html[dir="rtl"] .input-example {
-    position: static;
-    display: flex;
-    justify-content: flex-start;
-    width: 100%;
-    max-width: none;
-    margin-top: 8px;
-    transform: none;
-  }
-  .input-example .example-button { min-height: 36px; padding: 0 10px; font-size: 9px; }
-  .field input:placeholder-shown,
-  html[dir="rtl"] .field input:placeholder-shown,
-  html[dir="rtl"] .field input:not(:placeholder-shown) { padding-right: 15px; padding-left: 48px; }
-  .field input:placeholder-shown { padding-right: 15px; }
   .field-footer { min-height: 24px; }
 
   .builder-actions { width: 100%; grid-template-columns: 1fr; }
@@ -886,106 +870,295 @@ body { min-width: 0; overflow-x: clip; }
    Mobile example buttons — keep them inside the input row
    -------------------------------------------------------------------------- */
 @media (max-width: 720px) {
-  .input-wrap { position: relative; }
-
-  .input-example {
-    position: absolute;
-    top: 50%;
-    right: 7px;
-    left: auto;
-    width: auto;
-    max-width: calc(100% - 14px);
-    margin: 0;
-    transform: translateY(-50%);
-    z-index: 4;
-    display: flex;
-    align-items: center;
-    pointer-events: none;
+  .input-wrap {
+    position: relative !important;
+    isolation: isolate;
   }
 
-  .input-example .example-button {
-    pointer-events: auto;
-    min-height: 34px;
-    padding: 0 8px;
-    font-size: 8.8px;
-    white-space: nowrap;
+  .input-wrap > .input-example {
+    position: absolute !important;
+    top: 50% !important;
+    right: 7px !important;
+    left: auto !important;
+    bottom: auto !important;
+    width: auto !important;
+    max-width: calc(100% - 14px) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: translateY(-50%) !important;
+    z-index: 8 !important;
+    display: flex !important;
+    align-items: center !important;
+    pointer-events: none !important;
+  }
+
+  .input-wrap > .input-example .example-button {
+    pointer-events: auto !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 34px !important;
+    padding: 0 8px !important;
+    font-size: 8.6px !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
   }
 
   .field input:placeholder-shown {
-    padding-right: 112px;
-    padding-left: 13px;
+    padding-right: 112px !important;
+    padding-left: 13px !important;
   }
 
-  html[dir="rtl"] .input-example {
-    right: auto;
-    left: 7px;
+  html[dir="rtl"] .input-wrap > .input-example {
+    right: auto !important;
+    left: 7px !important;
   }
 
   html[dir="rtl"] .field input:placeholder-shown {
-    padding-right: 13px;
-    padding-left: 112px;
+    padding-right: 13px !important;
+    padding-left: 112px !important;
   }
 
-  /* These values-fields use LTR text even inside the Urdu RTL interface. */
   html[dir="rtl"] .field input#cnic,
   html[dir="rtl"] .field input#vehicle,
   html[dir="rtl"] .field input#date {
     direction: ltr;
     text-align: left;
   }
+
+  .data-safety-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 14px;
+    padding: 12px 13px;
+    border: 1px solid #b7d9c2;
+    border-radius: 9px;
+    background: #eef8f1;
+  }
+
+  .data-safety-badge strong {
+    color: #075d34;
+    font-size: 11px;
+    font-weight: 950;
+    letter-spacing: .02em;
+    white-space: nowrap;
+  }
+
+  .data-safety-badge span {
+    color: #456153;
+    font-size: 9px;
+    line-height: 1.6;
+  }
 }
 
 @media (max-width: 420px) {
-  .input-example {
-    right: 6px;
-    max-width: calc(100% - 12px);
-    margin-top: 0;
+  .input-wrap > .input-example {
+    right: 6px !important;
+    max-width: calc(100% - 12px) !important;
   }
 
-  .input-example .example-button {
-    min-height: 32px;
-    padding-inline: 7px;
-    font-size: 8.4px;
+  html[dir="rtl"] .input-wrap > .input-example {
+    right: auto !important;
+    left: 6px !important;
+  }
+
+  .input-wrap > .input-example .example-button {
+    min-height: 32px !important;
+    padding-inline: 7px !important;
+    font-size: 8px !important;
   }
 
   .field input:placeholder-shown {
-    padding-right: 106px;
-  }
-
-  html[dir="rtl"] .input-example {
-    right: auto;
-    left: 6px;
+    padding-right: 105px !important;
   }
 
   html[dir="rtl"] .field input:placeholder-shown {
-    padding-right: 13px;
-    padding-left: 106px;
+    padding-right: 13px !important;
+    padding-left: 105px !important;
+  }
+
+  .data-safety-badge {
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .data-safety-badge strong {
+    font-size: 10px;
+  }
+
+  .data-safety-badge span {
+    font-size: 8px;
   }
 }
 
 @media (max-width: 340px) {
-  .input-example {
-    right: 5px;
+  .input-wrap > .input-example {
+    right: 5px !important;
   }
 
-  html[dir="rtl"] .input-example {
-    right: auto;
-    left: 5px;
+  html[dir="rtl"] .input-wrap > .input-example {
+    right: auto !important;
+    left: 5px !important;
   }
 
-  .input-example .example-button {
-    min-height: 30px;
-    padding-inline: 6px;
-    font-size: 8px;
+  .input-wrap > .input-example .example-button {
+    min-height: 30px !important;
+    padding-inline: 6px !important;
+    font-size: 7.7px !important;
   }
 
   .field input:placeholder-shown {
-    padding-right: 98px;
+    padding-right: 98px !important;
   }
 
   html[dir="rtl"] .field input:placeholder-shown {
-    padding-right: 13px;
-    padding-left: 98px;
+    padding-right: 13px !important;
+    padding-left: 98px !important;
   }
 }
 
+
+/* Final responsive + prominent privacy notice */
+.data-safety-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+  padding: 8px 10px;
+  border: 1px solid #b9dcc5;
+  border-radius: 8px;
+  background: #eef8f1;
+  color: #075d34;
+  box-shadow: 0 2px 7px rgba(8, 92, 50, .05);
+}
+.data-safety-inline > svg {
+  flex: 0 0 auto;
+}
+.data-safety-inline > div {
+  min-width: 0;
+}
+.data-safety-inline strong {
+  display: block;
+  font-size: 10px;
+  line-height: 1.2;
+  font-weight: 950;
+  letter-spacing: .04em;
+}
+.data-safety-inline span {
+  display: block;
+  margin-top: 3px;
+  color: #456153;
+  font-size: 8px;
+  line-height: 1.45;
+}
+
+/* Never allow a narrow device to create sideways scrolling. */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+img, svg, video, canvas {
+  max-width: 100%;
+}
+.builder-shell, .builder-fields, .preview-panel, .builder-heading-row, .field-head, .field, .input-wrap, .select-wrap {
+  min-width: 0;
+}
+.field input, .field select {
+  min-width: 0;
+  max-width: 100%;
+}
+
+@media (max-width: 720px) {
+  .builder-heading-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    gap: 12px;
+  }
+
+  .data-safety-inline {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .data-safety-inline strong {
+    font-size: 11px;
+  }
+
+  .data-safety-inline span {
+    font-size: 8.5px;
+  }
+
+  .input-wrap > .input-example {
+    position: absolute !important;
+    top: 50% !important;
+    right: 6px !important;
+    left: auto !important;
+    bottom: auto !important;
+    width: auto !important;
+    max-width: calc(100% - 12px) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: translateY(-50%) !important;
+    display: flex !important;
+    align-items: center !important;
+    z-index: 8 !important;
+  }
+
+  html[dir="rtl"] .input-wrap > .input-example {
+    right: auto !important;
+    left: 6px !important;
+  }
+
+  .input-wrap > .input-example .example-button {
+    min-height: 32px !important;
+    padding-inline: 7px !important;
+    font-size: 8px !important;
+    white-space: nowrap !important;
+  }
+
+  .field input:placeholder-shown {
+    padding-left: 13px !important;
+    padding-right: 105px !important;
+  }
+
+  html[dir="rtl"] .field input:placeholder-shown {
+    padding-right: 13px !important;
+    padding-left: 105px !important;
+  }
+}
+
+@media (max-width: 340px) {
+  .builder-fields, .preview-panel {
+    padding-inline: 10px !important;
+  }
+
+  .data-safety-inline {
+    gap: 7px;
+    padding: 8px;
+  }
+
+  .data-safety-inline strong {
+    font-size: 10px;
+  }
+
+  .data-safety-inline span {
+    font-size: 7.5px;
+  }
+
+  .input-wrap > .input-example .example-button {
+    min-height: 30px !important;
+    padding-inline: 6px !important;
+    font-size: 7.5px !important;
+  }
+
+  .field input:placeholder-shown {
+    padding-right: 98px !important;
+  }
+
+  html[dir="rtl"] .field input:placeholder-shown {
+    padding-left: 98px !important;
+  }
+}

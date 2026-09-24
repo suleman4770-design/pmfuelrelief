@@ -4,14 +4,14 @@ const SEO = {
     description: "9771 پر PM Fuel Relief رجسٹریشن SMS کیسے بھیجیں؟ CNIC، گاڑی نمبر، صوبہ کوڈ اور DDMMYYYY تاریخ کے ساتھ آسان اردو گائیڈ۔",
     robots: "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
     keywords: [
-      "9771 SMS registration", "9771 SMS registration format", "PM Fuel Relief 9771", "PM Fuel Relief registration SMS", "9771 petrol relief", "9771 vehicle number format", "9771 province code Punjab", "9771 registration date DDMMYYYY", "how to send REG SMS to 9771", "PM Fuel Relief in Urdu", "9771 پر رجسٹریشن کا طریقہ", "9771 ایس ایم ایس رجسٹریشن", "پٹرول ریلیف 9771 رجسٹریشن", "9771 گاڑی نمبر فارمیٹ", "9771 پنجاب کوڈ P", "9771 رجسٹریشن تاریخ", "9771 پر REG میسج کیسے بھیجیں"
+      "9771 SMS registration", "9771 SMS registration format", "9771 registration Pakistan", "9771 petrol relief registration", "PM Fuel Relief 9771", "PM Fuel Relief registration SMS", "PM Fuel Relief SMS format", "how to send REG SMS to 9771", "9771 REG SMS", "9771 TOK token", "9771 province code", "9771 Punjab code", "9771 vehicle number format", "9771 registration date DDMMYYYY", "9771 SMS guide Pakistan", "PM Fuel Relief in Urdu", "petrol relief 9771 Urdu", "9771 پر رجسٹریشن کا طریقہ", "9771 ایس ایم ایس رجسٹریشن", "9771 پر REG میسج کیسے بھیجیں", "9771 رجسٹریشن کا طریقہ", "9771 ایس ایم ایس فارمیٹ", "9771 پر پٹرول ریلیف رجسٹریشن", "9771 گاڑی نمبر", "9771 پنجاب کوڈ", "9771 رجسٹریشن تاریخ", "9771 ٹوکن TOK طریقہ", "پٹرول ریلیف 9771", "PM Fuel Relief اردو گائیڈ"
     ],
   },
   faqs: {
     title: "9771 SMS سوالات | PM Fuel Relief اردو گائیڈ",
     description: "9771 رجسٹریشن، گاڑی نمبر میں ہائفن، پنجاب کوڈ P، DDMMYYYY تاریخ اور PM Fuel Relief SMS کے عام سوالات کے آسان اردو جواب۔",
     robots: "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
-    keywords: ["9771 FAQs Urdu", "9771 registration questions", "9771 گاڑی نمبر", "9771 پنجاب کوڈ", "9771 SMS طریقہ", "PM Fuel Relief سوالات"],
+    keywords: ["9771 FAQs Urdu", "9771 registration questions", "9771 SMS format Pakistan", "9771 vehicle number format", "9771 Punjab code", "9771 registration date", "9771 TOK token guide", "9771 گاڑی نمبر", "9771 پنجاب کوڈ", "9771 SMS طریقہ", "9771 رجسٹریشن کا طریقہ", "PM Fuel Relief سوالات"],
   },
   privacy: {
     title: "رازداری | 9771 SMS گائیڈ",

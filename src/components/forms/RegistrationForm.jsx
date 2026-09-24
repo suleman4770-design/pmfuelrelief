@@ -255,7 +255,13 @@ export default function RegistrationForm() {
           <div className="builder-fields">
             <div className="builder-heading-row">
               <div><span className="section-chip">آپ کی معلومات</span><h3>اپنا SMS تیار کریں۔</h3></div>
-              <div className="browser-only"><ShieldCheck size={15} /> صرف براؤزر میں</div>
+              <div className="data-safety-inline" role="note" aria-label="NO DATA SAVED">
+                <ShieldCheck size={16} aria-hidden="true" />
+                <div>
+                  <strong>NO DATA SAVED</strong>
+                  <span>آپ کی معلومات اس ویب سائٹ پر محفوظ نہیں کی جاتیں۔</span>
+                </div>
+              </div>
             </div>
 
             {submitted && Object.keys(errors).length > 0 && (
@@ -367,6 +373,12 @@ export default function RegistrationForm() {
             <div className="preview-callout">
               <div className="preview-callout-icon"><CheckCircle2 size={16} /></div>
               <div><strong>{sms ? "تمام معلومات درست ہیں۔" : "یہاں سے کچھ نہیں بھیجا جاتا۔"}</strong><span>{sms ? "SMS کاپی کریں اور اپنے فون کی SMS ایپ سے خود بھیجیں۔" : "یہ صفحہ صرف متن تیار کرتا ہے۔ SMS آپ خود بھیجتے ہیں۔"}</span></div>
+            </div>
+
+            <div className="data-safety-badge" aria-label="فارم کا ڈیٹا محفوظ نہیں کیا جاتا">
+              <ShieldCheck size={18} aria-hidden="true" />
+              <strong>NO DATA SAVED</strong>
+              <span>آپ کی CNIC، گاڑی نمبر اور تاریخ اس ویب سائٹ کے فارم بیک اینڈ میں محفوظ نہیں کی جاتیں۔</span>
             </div>
 
             <div className="preview-privacy"><ShieldCheck size={15} /><span>آپ کی درج کردہ معلومات اسی صفحے پر رہتی ہیں اور اس ویب سائٹ کو جمع نہیں کرائی جاتیں۔</span></div>
